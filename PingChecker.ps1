@@ -20,7 +20,7 @@ $form.Controls.Add($listBox)
 $checkAgainButton = New-Object System.Windows.Forms.Button
 $checkAgainButton.Width = 100
 $checkAgainButton.Height = 50
-$checkAgainButton.Text = "Check Wallbaors"
+$checkAgainButton.Text = "Check Computers"
 $checkAgainButton.Location = New-Object System.Drawing.Point(95, 170)
 $form.Controls.Add($checkAgainButton)
 
