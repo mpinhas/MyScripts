@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+  <head>
+    <title>New Device Information</title>
+    <style>
+      /* Form styling */
+      #device-form {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #ccc;
+      }
+
+      /* Label styling */
+      #device-form label {
+        font-size: 18px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      /* Input styling */
+      #device-form input[type="text"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+
+      /* Submit button styling */
+      #device-form input[type="button"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* Submit button hover effect */
+      #device-form input[type="button"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers msdt:dt="string">Michal Solovey;Ilan Yakubov (CW)</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers>
+<mso:SharedWithUsers msdt:dt="string">66;#Michal Solovey;#1735;#Ilan Yakubov (CW)</mso:SharedWithUsers>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+  <body>
+    <form id="device-form">
+      <label for="belong-to">Belong To (Full Name):</label>
+      <input type="text" id="belong-to" name="belong-to"><br>
+
+      <label for="model">Model:(IPhone 14/Samsung Galaxy S10)</label>
+      <input type="text" id="model" name="model"><br>
+
+      <label for="imei">IMEI:</label>
+      <input type="text" id="imei" name="imei"><br>
+
+      <label for="serial">Serial:</label>
+      <input type="text" id="serial" name="serial"><br>
+
+      <label for="size">Size:</label>
+      <input type="text" id="size" name="size"><br>
+
+      <label for="color">Color:</label>
+      <input type="text" id="color" name="color"><br>
+
+      <input type="button" value="Submit" onclick="submitForm()">
+    </form>
+  </body>
+  <script>
+    function submitForm() {
+    var belongTo = document.getElementById("belong-to").value;
+    var model = document.getElementById("model").value;
+    var imei = document.getElementById("imei").value;
+    var serial = document.getElementById("serial").value;
+    var size = document.getElementById("size").value;
+    var color = document.getElementById("color").value;
+
+    if (belongTo === "" || model === "" || imei === "" || serial === "" || size === "" || color === "") {
+        alert("Please fill in all fields before submitting the form.");
+        return;
+    }
+
+    var message = "Belong To: " + belongTo + "%0D%0A" + "Model: " + model + "%0D%0A" + "IMEI: " + imei + "%0D%0A" + "Serial: " + serial + "%0D%0A" + "Size: " + size + "%0D%0A" + "Color: " + color;
+    window.location.href = "mailto:youremail@mail.com?cc=yourmail@mail.com&subject=New Device Information - "+ belongTo +"&body=" + message;
+}
+
+  </script>
+</html>
