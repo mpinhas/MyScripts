@@ -1,0 +1,2 @@
+The Script allow you to sync the clock on from you dc server on the domain on base on psexec
+just change the value in the script of the location of psexec and the dc server name\IP 
